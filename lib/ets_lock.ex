@@ -13,7 +13,7 @@ defmodule EtsLock do
   For high concurrent performance, all locks are stored in a separate
   ETS table, and no GenServers or other processes are used to coordinate
   access.  This is in contrast to the
-  (erlang-ets-lock library)[https://github.com/afiskon/erlang-ets-lock/],
+  [erlang-ets-lock library](https://github.com/afiskon/erlang-ets-lock/),
   which uses a single GenServer to serialize access to ETS.
   """
 
