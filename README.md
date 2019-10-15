@@ -23,24 +23,24 @@ Full documentation is available on
 
 ## Example usage
 
-iex> table = :ets.new(:whatever, [:set, :public])
-iex> spawn(fn ->
-...>   ## Wait 50ms, try to acquire lock, then insert
-...>   Process.sleep(50)
-...>   EtsLock.with_ets_lock(table, :key, fn _ ->
-...>     :ets.insert(table, {:key, :yup})
-...>   end)
-...> end)
-iex> spawn(fn ->
-...>   ## Acquire lock immediately, hold it for 100ms, then insert
-...>   EtsLock.with_ets_lock(table, :key, fn _ ->
-...>     Process.sleep(100)
-...>     :ets.insert(table, {:key, :nope})
-...>   end)
-...> end)
-iex> Process.sleep(200)
-iex> :ets.lookup(table, :key)
-[{:key, :yup}]
+    iex> table = :ets.new(:whatever, [:set, :public])
+    iex> spawn(fn ->
+    ...>   ## Wait 50ms, try to acquire lock, then insert
+    ...>   Process.sleep(50)
+    ...>   EtsLock.with_ets_lock(table, :key, fn _ ->
+    ...>     :ets.insert(table, {:key, :yup})
+    ...>   end)
+    ...> end)
+    iex> spawn(fn ->
+    ...>   ## Acquire lock immediately, hold it for 100ms, then insert
+    ...>   EtsLock.with_ets_lock(table, :key, fn _ ->
+    ...>     Process.sleep(100)
+    ...>     :ets.insert(table, {:key, :nope})
+    ...>   end)
+    ...> end)
+    iex> Process.sleep(200)
+    iex> :ets.lookup(table, :key)
+    [{:key, :yup}]
 
 ## Options
 
