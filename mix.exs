@@ -4,10 +4,27 @@ defmodule EtsLock.MixProject do
   def project do
     [
       app: :ets_lock,
-      version: "0.1.0",
+      version: "0.2.0",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      description: "A lock handler for ETS data",
+      source_url: "https://github.com/appcues/ets_lock",
+      homepage_url: "http://hexdocs.pm/ets_lock",
+      package: [
+        maintainers: ["Pete Gamache <pete@appcues.com>"],
+        licenses: ["MIT"],
+        links: %{
+          "GitHub" => "https://github.com/appcues/ets_lock"
+        }
+      ],
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ]
     ]
   end
 
