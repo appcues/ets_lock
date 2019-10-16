@@ -15,7 +15,7 @@ defmodule EtsLock.Application do
     ])
 
     children = []
-    opts = [strategy: :one_for_one, name: Jorb.Supervisor]
+    opts = [strategy: :one_for_one, name: EtsLock.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end
