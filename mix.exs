@@ -40,7 +40,7 @@ defmodule EtsLock.MixProject do
   defp deps do
     [
       {:dialyxir, "~> 0.5", only: [:dev, :test], runtime: false},
-      {:excoveralls, "~> 0.11", only: :test},
+      {:excoveralls, "~> 0.16", only: :test},
       {:ex_doc, "~> 0.21", only: :dev}
     ]
   end
