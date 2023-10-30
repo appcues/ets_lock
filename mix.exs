@@ -41,7 +41,7 @@ defmodule EtsLock.MixProject do
     [
       {:dialyxir, "~> 0.5", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.11", only: :test},
-      {:ex_doc, "~> 0.21", only: :dev}
+      {:ex_doc, "~> 0.30", only: :dev}
     ]
   end
 end
