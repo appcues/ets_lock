@@ -39,7 +39,7 @@ defmodule EtsLock.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:dialyxir, "~> 0.5", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.11", only: :test},
       {:ex_doc, "~> 0.21", only: :dev}
     ]
